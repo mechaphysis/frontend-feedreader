@@ -4,7 +4,7 @@
 * [TO-DO](#to-do)
 * [Contributing](#contributing)
 
-# What it is
+## What it is
 
 ### Test driven development with Jasmine.
 
@@ -19,7 +19,7 @@ Click [here](_https://mechaphysis.github.io/frontend-feedreader/) to run the onl
 If you prefer to run it locally, download the [zip](_https://github.com/mechaphysis/frontend-feedreader/archive/master.zip) file, uncompress it and open the index.html file in your web browser.
 
 
-# TO-DO
+## TO-DO
 
 * Add the possibility to choose which RSS feeds to follow.
 * Add a new test suite for *'Customize RSS'*.  
