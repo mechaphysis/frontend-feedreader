@@ -59,12 +59,17 @@ $(function() {
      * functionality regarding the Menu
      */
 
-      /* TODO: Write a test that ensures the menu element is
-      * hidden by default. You'll have to analyze the HTML and
-      * the CSS to determine how we're performing the
-      * hiding/showing of the menu element.
+      /* This test ensures that the menu element is
+      * hidden by default. The menu element is within the body tag
+      * and it has a class 'menu-hidden' which in CSS corresponds
+      * to hiding its visibility by default.
+      * So we expect .hasClass('menu-hidden') to be true.
+      * If we change even a bit the parameter for .hassClass
+      * - for example, 'menu-hiddens' -  we can check
+      * that the test will fail.
       */
       it('Menu element is hidden', function() {
+        expect($('body').hasClass('menu-hidden')).toBe(true);
 
       })
 
