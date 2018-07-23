@@ -26,14 +26,12 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
+        /* This test will loop through each feed
+         * in the allFeeds object and ensure it has a URL defined
          * and that the URL is not empty.
+         * For doing this we wrap the expects of Jasmine inside
+         * a for...of loop that goes through every feed in allFeeds:
          */
-        /* For doing this we wrap the expects of jasmine inside
-        *  a for...of loop that goes through every feed in allFeeds:
-        */
         it('URL are defined', function() {
           for (let feed of allFeeds) {
             expect(feed.url).toBeDefined();
@@ -41,9 +39,11 @@ $(function() {
           };
         });
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
+        /* This last test in 'RSS feeds' suite will loop through
+         * each feed in the allFeeds object and ensure it has
+         * a name defined and that the name is not empty.
+         * For achieving that we wrap the Jasmine expects inside
+         * a for...of loop like before:
          */
         it('names are defined', function() {
           for(let feed of allFeeds) {
