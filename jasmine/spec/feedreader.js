@@ -45,7 +45,7 @@ $(function() {
          * For achieving that we wrap the Jasmine expects inside
          * a for...of loop like before:
          */
-        it('names are defined', function() {
+        it('Names are defined', function() {
           for(let feed of allFeeds) {
             expect(feed.name).toBeDefined();
             expect(feed.name.length).not.toBe(0);
@@ -54,10 +54,10 @@ $(function() {
     });
 
 
-    describe('The menu', function() {
     /* This is the second suite. It will test elements and
-     * functionality regarding the Menu
-     */
+    * functionality regarding the Menu
+    */
+    describe('The Menu', function() {
 
       /* This test ensures that the menu element is
       * hidden by default. The menu element is within the body tag
@@ -93,9 +93,9 @@ $(function() {
 
     });
 
+    /* This is our third test suite that will test the Feed load:
+    */
     describe('Initial Entries', function() {
-      /* This is our third test suite that will test the Feed load:
-      */
       /* This test ensures  that when the loadFeed asynchronous function
       * function is called and completes its work, there is at least
       * a single .entry element within the .feed container.
@@ -112,7 +112,7 @@ $(function() {
         });
       });
       // we check that the .feed as at least a .entry element:
-      it('should have at least an .entry element', function(done) {
+      it('Should have at least an .entry element', function(done) {
         expect(firstEntry.length).toBeDefined();
         /* we use again the done() function to tell this part of the test that
          * its making use of the loadFeed() asynchronous functionality.
@@ -122,13 +122,37 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* This is our last test suite. It will check that the content of
+     * the feed changes when the feed is loaded:
+     */
     describe('New Feed Selection', function() {
-
-    })
-
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
+      /* TODO: Write a test that ensures when a new feed is loaded
+      * by the loadFeed function that the content actually changes.
+      * Remember, loadFeed() is asynchronous so we will once again
+      * use beforeEach() and done() to simulate its asynchronous
+      * behaviour
+      */
+      beforeEach(function(done) {
+        /* we call one time the loadFeed function and store feed html
+         * content into firstFeed for comparing it later:
          */
+        loadFeed(0, function() {
+          firstFeed = $('.feed').html();
+          /* We then call for a second time loadFeed and store
+           * the new content into secondFeed to compare it
+           * with firstFeed
+           */
+          loadFeed(1, function() {
+            secondFeed = $('.feed').html();
+            done();
+          });
+        });
+      });
+      //now we perfom the expectation test with both feed contents:
+      it('Should change the feed content after calling loadFeed() again', function(done) {
+        expect(firstFeed).not.toEqual(secondFeed);
+        done();
+      });
+
+    });
 }());
