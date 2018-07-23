@@ -15,7 +15,9 @@ The whole testing is organized in suites of small tests, one suite per each part
 
 ## How to run the app
 
-Download the project [zip](https://github.com/mechaphysis/frontend-feedreader/archive/master.zip) file, uncompress it and open the index.html file in your web browser. The first time you load index.html the Jasmine tests will be performed before the actual web-app loads. Once the web-app is fully loaded and the Feed Reader shows on screen you can still see and perform the Jasmine tests by going to the bottom of the page.
+Download the project [zip](https://github.com/mechaphysis/frontend-feedreader/archive/master.zip) file, uncompress it and open the *index.html* file in your web browser. 
+
+The first time you load *index.html* the Jasmine tests will be performed before the actual web-app loads. Once the web-app is fully loaded and the Feed Reader shows on screen you can still see and perform the Jasmine tests by going to the bottom of the page.
 
 
 ## TO-DO
