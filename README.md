@@ -15,8 +15,8 @@ The whole testing is organized in suites of small tests, one suite per each part
 
 ## How to run the app
 
-Click [here](_https://mechaphysis.github.io/frontend-feedreader/) to run the online version of the web-app.
-If you prefer to run it locally, download the [zip](_https://github.com/mechaphysis/frontend-feedreader/archive/master.zip) file, uncompress it and open the index.html file in your web browser.
+Click [here](https://mechaphysis.github.io/frontend-feedreader/) to run the online version of the web-app.
+If you prefer to run it locally, download the [zip](https://github.com/mechaphysis/frontend-feedreader/archive/master.zip) file, uncompress it and open the index.html file in your web browser.
 
 
 ## TO-DO
